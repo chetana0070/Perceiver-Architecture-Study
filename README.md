@@ -219,8 +219,8 @@ Recommended Python version: **Python ≥ 3.9**
 ## Author
 
 **Ayushman Mishra**  
-Robotics & Control System Engineer  
-GitHub: https://github.com/aymisxx  
+Robotics & Control Systems  
+https://github.com/aymisxx  
 [linkedin.com/in/aymisxx](https://www.linkedin.com/in/aymisxx/)
 
 ---
