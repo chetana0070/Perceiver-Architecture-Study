@@ -61,9 +61,9 @@ $$sin(\pi f_k x), \cos(\pi f_k x), \sin(\pi f_k y), \cos(\pi f_k y)$$
 We concatenate multiple bands $$k = 1..B$$ and also include raw coordinates $[x, y]$.
 
 With `num_bands = 16`, the positional dimension is:
-$$
-\text{pos\_dim} = 2 + 4B = 2 + 64 = 66
-$$
+
+$$\text{pos\_dim} = 2 + 4B = 2 + 64 = 66$$
+
 So each pixel token becomes $[RGB(3) \ \| \ pos(66)] \Rightarrow 69$ dimensions before projection.
 
 ### 3) Cross-attention bottleneck (input → latents)
