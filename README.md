@@ -62,7 +62,7 @@ We concatenate multiple bands $$k = 1..B$$ and also include raw coordinates $[x,
 
 With `num_bands = 16`, the positional dimension is:
 
-$$\text{pos\_dim} = 2 + 4B = 2 + 64 = 66$$
+$$\mathrm{pos\_dim} = 2 + 4B = 2 + 64 = 66$$
 
 So each pixel token becomes $[RGB(3) \ \| \ pos(66)] \Rightarrow 69$ dimensions before projection.
 
