@@ -55,7 +55,9 @@ This reproduction avoids convolutions entirely:
 Flattening removes explicit 2D structure, so we inject location information using Fourier features.
 
 For a pixel at normalized coordinate $(x, y)\in[-1,1]^2$ and frequency $f_k$, the feature block is:
-$$sin(\pi f_k x), \cos(\pi f_k x), \sin(\pi f_k y), \cos(\pi f_k y$$
+
+$$sin(\pi f_k x), \cos(\pi f_k x), \sin(\pi f_k y), \cos(\pi f_k y)$$
+
 We concatenate multiple bands $$k = 1..B$$ and also include raw coordinates $[x, y]$.
 
 With `num_bands = 16`, the positional dimension is:
@@ -98,9 +100,8 @@ Given an image $x \in \mathbb{R}^{B \times 3 \times H \times W}$:
 
 ### Attention
 Scaled dot-product attention:
-$$
-\text{Attn}(Q,K,V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d}}\right)V
-$$
+
+$$\text{Attn}(Q,K,V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d}}\right)V$$
 
 In **cross-attention**:
 - $Q$ from latents $Z \in \mathbb{R}^{M \times d}$
@@ -111,23 +112,22 @@ In **self-attention**:
 
 ### Fourier features
 For 2D coordinates $(x,y)$ and a set of frequencies $\{f_k\}_{k=1}^{B}$:
-$$
-\gamma(x,y) = [x,y,\ \sin(\pi f_1 x),\cos(\pi f_1 x),...,\sin(\pi f_B x),\cos(\pi f_B x),\ \sin(\pi f_1 y),\cos(\pi f_1 y),...,\sin(\pi f_B y),\cos(\pi f_B y)]
-$$
+
+$$\gamma(x,y) = [x,y,\ \sin(\pi f_1 x),\cos(\pi f_1 x),...,\sin(\pi f_B x),\cos(\pi f_B x),\ \sin(\pi f_1 y),\cos(\pi f_1 y),...,\sin(\pi f_B y),\cos(\pi f_B y)]$$
 
 ### Complexity
 - Vanilla Transformer attention on input tokens:
-$$
-O(N^2)
-$$
+
+$$O(N^2)$$
+
 - Perceiver cross-attention:
-$$
-O(NM)
-$$
+
+$$O(NM)$$
+
 - Latent self-attention:
-$$
-O(M^2)
-$$
+
+$$O(M^2)$$
+
 With $M \ll N$, this is significantly more scalable.
 
 ---
