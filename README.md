@@ -36,9 +36,9 @@ https://arxiv.org/abs/2103.03206
 
 ## Motivation
 Standard Transformer self-attention scales quadratically with the number of input tokens **N**:
-$$
-O(N^2)
-$$
+
+$$O(N^2)$$
+
 For high-dimensional modalities (images, audio, video, point clouds), **N** can become extremely large, making vanilla Transformers expensive.
 
 The Perceiver addresses this by introducing a learned **latent array** of size **M** (typically $M \ll N$) and using **cross-attention** to compress the input into latents. Subsequent computation happens only within latents, allowing compute to scale with $N \cdot M$ and $M^2$, rather than $N^2$.
