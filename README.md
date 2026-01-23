@@ -6,6 +6,7 @@ A compact, educational PyTorch reproduction of the **Perceiver** architecture in
 https://arxiv.org/abs/2103.03206
 
 **Authors:** Chetana Chakrapani; Ayushman Mishra
+
 **GitHub:**  https://github.com/chetana0070; https://github.com/aymisxx
 
 ---
