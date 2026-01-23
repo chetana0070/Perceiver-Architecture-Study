@@ -55,9 +55,7 @@ This reproduction avoids convolutions entirely:
 Flattening removes explicit 2D structure, so we inject location information using Fourier features.
 
 For a pixel at normalized coordinate $(x, y)\in[-1,1]^2$ and frequency $f_k$, the feature block is:
-$$
-[\sin(\pi f_k x), \cos(\pi f_k x), \sin(\pi f_k y), \cos(\pi f_k y)]
-$$
+$$sin(\pi f_k x), \cos(\pi f_k x), \sin(\pi f_k y), \cos(\pi f_k y$$
 We concatenate multiple bands $$k = 1..B$$ and also include raw coordinates $[x, y]$.
 
 With `num_bands = 16`, the positional dimension is:
