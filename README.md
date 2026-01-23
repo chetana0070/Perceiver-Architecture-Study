@@ -1,12 +1,12 @@
-# Perceiver Architecture Study — Minimal PyTorch Re-Implementation (CIFAR-10)
+# Perceiver Architecture Study: Minimal PyTorch Re-Implementation (CIFAR-10)
 
 A compact, educational PyTorch reproduction of the **Perceiver** architecture introduced by Jaegle et al. (DeepMind, ICML 2021). This project implements the core ideas **Fourier positional encoding**, a **cross-attention bottleneck** into a learned **latent array**, and a **latent Transformer tower** and trains the resulting model on **CIFAR-10** to demonstrate the architecture end-to-end.
 
 **Original paper:** *Perceiver: General Perception with Iterative Attention*  
 https://arxiv.org/abs/2103.03206
 
-**Authors:** Ayushman Mishra, Chetana Chakrapani  
-**GitHub:** https://github.com/aymisxx • https://github.com/chetana0070
+**Authors:** Chetana Chakrapani; Ayushman Mishra
+**GitHub:**  https://github.com/chetana0070; https://github.com/aymisxx
 
 ---
 
@@ -87,7 +87,7 @@ For CIFAR-10 classification, we use:
 Given an image $x \in \mathbb{R}^{B \times 3 \times H \times W}$:
 
 1. Flatten pixels into $N=H\cdot W$ tokens
-2. Compute Fourier 2D positional encoding (shape $N \times \text{pos\_dim}$)
+2. Compute Fourier 2D positional encoding (shape $N \times \mathrm{pos}_{\mathrm{dim}}$)
 3. Concatenate $[RGB \| pos]$ and project to $d_{\text{model}}$
 4. Expand learned latents to batch size
 5. Cross-attention: latents read input tokens
